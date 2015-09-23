@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Graphics 101</title>
+
+	<style>
+		body {background-color: grey;}
+		canvas {background-color: #fff;}
+	</style>
+
+	<script>
+		window.onload = setupWebGLl;
+		var gl = null;
+		function setupWebGLl() {
+			var canvas = document.getElementById("my-canvas");
+			try {
+				gl = canvas.getContext("experimental-webgl")
+			}
+			catch (err) {
+
+			}
+
+			if(gl){
+				gl.clearColor(0.0,1.0,0.0,1.0);
+				gl.clear(gl.COLOR_BUFFER_BIT);
+			}
+			else {
+				alert("錯誤：你的瀏覽器不支援 WebGL！");
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<canvas id="my-canvas" width="400" height="300">
+		你的瀏覽器不支援唷！QwQ
+	</canvas>
+</body>
+</html>
